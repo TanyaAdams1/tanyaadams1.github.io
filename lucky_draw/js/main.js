@@ -86,6 +86,7 @@ function check_item() {
 
 function postprocess() {
     let item = check_item();
+    result = item.id;
     fetch("https://b1dca5512b98ce4f6a6cd2a9ad9c34fa.m.pipedream.net", {
         method: "POST",
         // mode: "no-cors",
@@ -116,7 +117,6 @@ function postprocess() {
         keyboard: false,
         show: true
     })
-    result = item.id;
 }
 
 function confirm() {
