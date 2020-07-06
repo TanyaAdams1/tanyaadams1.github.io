@@ -113,6 +113,8 @@ function confirm() {
     }).then((response => response.json())).then(function (data) {
         if (data.success)
             $("#name-confirm").text("完成!").removeClass("btn-secondary").addClass("btn-success")
+        else
+            $("#name-confirm").text("网络错误").removeClass("btn-secondary").addClass("btn-danger")
     });
 }
 
