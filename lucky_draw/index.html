@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <meta name="theme-color" content="#fafafa">
+
+    <style>
+        body {
+            background-color: rgba(230, 150, 202, 0.98);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Add your site or application content here -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col justify-content-center">
+            <p class="h1 text-center" style="font-family: cursive">Lucky draw</p>
+        </div>
+    </div>
+    <hr/>
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="alert alert-info" role="alert">
+                <h4 class="alert-heading">
+                    抽奖方法
+                </h4>
+                <p>按住
+                    <button type="button" class="btn btn-danger">开始</button>
+                    蓄力,在任意时间松开让转盘转起来.<br/>蓄力越多,转盘转的越快!
+                </p>
+                <p>只有一次机会哦!你的运气到底有多好呢?</p>
+                <hr/>
+                <p>每种颜色都对应着不同的奖品!</p>
+                <img src="img/reward.png" alt="奖品" class="img-fluid">
+            </div>
+        </div>
+        <div class="col justify-content-center">
+            <canvas id="canvas" class="align-self-center" style="width: 95%;height: 95%"></canvas>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col justify-content-center">
+                <button type="button" class="btn btn-danger btn-block" id="button-draw">开始</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<img src="img/board.png" alt="转盘" class="hidden" id="board_image">
+<div id="dialog-normal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dialog-title">抽到了一个奖品</h5>
+            </div>
+            <div class="modal-body">
+                <label for="name-input">
+                    <p id="dialog-content">Modal body text goes here.</p>
+                </label>
+                <input type="email" class="form-control" id="name-input" placeholder="Micheal Jackson">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="confirm()" id="name-confirm">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dialog-thankyou" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">抽到了"Thank you"!</h5>
+            </div>
+            <div class="modal-body">
+                        <p id="thankyou-content" class="h6">谢谢来玩!你还可以再玩一次哦!</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
