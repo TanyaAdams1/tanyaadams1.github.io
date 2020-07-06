@@ -7,7 +7,17 @@ const back_threshold = -Math.PI / 3
 ctx.fillStyle = "rgb(163,85,213)"
 const names = ["手链", "猫爪钥匙扣", "手帐", "谢谢惠顾", "香水", "唇膏", "月球灯"];
 const img_name = ["bracelet", "key", "agenda", "", "perfume", "lipstick", "lamp"];
-
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+if (!localStorage.getItem("session"))
+    localStorage.setItem("session",makeid(20))
 function update() {
     if (status === 2) {
         theta += omega * delta_t;
@@ -108,7 +118,8 @@ function confirm() {
         // mode: "no-cors",
         body: JSON.stringify({
             name: name,
-            id: result
+            id: result,
+            session: localStorage.getItem("session")
         })
     }).then((response => response.json())).then(function (data) {
         if (data.success)
